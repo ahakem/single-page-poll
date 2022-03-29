@@ -3,7 +3,7 @@ import { useState } from "react";
 const usePoll = () => {
   const [state, setState] = useState({
     question: "something",
-    Options: {}
+    options: {}
   });
   const onQuestionChange = (e) => {
     setState({
@@ -12,13 +12,12 @@ const usePoll = () => {
     })
   }
   const onOptionChange = (e, id) => {
-
     setState({
       ...state,
-      Options: {
-        ...state.Options,
+      options: {
+        ...state.options,
         [id]: {
-          ...state.Options[id],
+          ...state.options[id],
           text: e.target.value,
         }
       }
@@ -27,8 +26,8 @@ const usePoll = () => {
   const onAddOption = (value) => {
     setState({
       ...state,
-      Options: {
-        ...state.Options,
+      options: {
+        ...state.options,
         [Date.now()]: {
           text: value,
           votes: 0
@@ -37,11 +36,11 @@ const usePoll = () => {
     })
   }
   const onDeleteOption = (id) => {
-    const cloneOptions = { ...state.Options }
+    const cloneOptions = { ...state.options }
     delete cloneOptions[id]
     setState({
       ...state,
-      Options: cloneOptions
+      options: cloneOptions
     })
   }
   return {

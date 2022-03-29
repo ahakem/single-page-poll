@@ -1,7 +1,8 @@
+import Poll from './components/poll'
 function App() {
   return (
     <div className="App">
-          Poll App
+      <Poll />
     </div>
   );
 }

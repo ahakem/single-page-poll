@@ -1,57 +1,21 @@
 import React, { useState, useRef } from 'react'
 import CreatePoll from './CreatePoll'
+import usePoll from '../../hooks/usePoll'
 export default function Poll() {
-
-  const [state, setState] = useState({
-    question: "something",
-    answers:{}
-  });
-  const onQuestionChange = (e) =>{
-    setState({
-      ...state,
-      question: e.target.value
-    })
-  }
-  const onAnswerChange = (e, id) =>{
-    
-    setState({
-      ...state,
-      answers: {
-        ...state.answers,
-        [id]:{
-          ...state.answers[id],
-          text: e.target.value,
-        }
-      }
-    })
-  }
-  const onAddAnswer = (value) =>{
-    setState({
-      ...state,
-      answers: {
-        ...state.answers,
-        [Date.now()]:{
-          text: value,
-          votes:0
-        }
-      }
-    })
-  }
-  const onDeleteAnswer = (id) =>{
-    const cloneAnswers = {...state.answers}
-    delete cloneAnswers[id]
-    setState({
-      ...state,
-      answers: cloneAnswers
-    })
-  }
+  const {
+    onQuestionChange,
+    onOptionChange,
+    onAddOption,
+    onDeleteOption,
+    state,
+  } = usePoll()
   return (
     <div>
       <CreatePoll
         onQuestionChange={onQuestionChange}
-        onAnswerChange={onAnswerChange}
-        onAddAnswer={onAddAnswer}
-        onDeleteAnswer={onDeleteAnswer}
+        onOptionChange={onOptionChange}
+        onAddOption={onAddOption}
+        onDeleteOption={onDeleteOption}
         state={state}
       />
     </div>

@@ -23,7 +23,6 @@ export default function Vote(props) {
         </div>
       ))}
       <button onClick={()=>sendVote(answer)} disabled={!answer}>Vote</button>
-      Total Votes = <b>{state.totalVotes}</b>
     </div>
   )
 }

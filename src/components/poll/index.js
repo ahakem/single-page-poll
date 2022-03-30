@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import CreatePoll from './CreatePoll'
 import usePoll from '../../hooks/usePoll'
 import Vote from './Vote'
+import Chart from './Chart'
 export default function Poll() {
   const {
     onQuestionChange,
@@ -26,6 +27,8 @@ export default function Poll() {
       <Vote
         onVote={onVote}
         state={state} />
+        <hr />
+        <Chart state={state} />
     </div>
   )
 }

@@ -5,9 +5,7 @@ import Vote from './Vote'
 import Chart from './Chart'
 
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import {Box, Paper, Grid} from '@mui/material';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   padding: theme.spacing(2),
@@ -52,8 +50,6 @@ export default function Poll() {
           <Chart state={state} />
           </Item>
         </Grid>
-  
-        
       </Grid>
     </Box>
   )

@@ -1,9 +1,10 @@
 import Poll from './components/poll'
+import Container from '@mui/material/Container';
 function App() {
   return (
-    <div className="App">
+    <Container>
       <Poll />
-    </div>
+    </Container>
   );
 }
 

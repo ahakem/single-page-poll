@@ -4,7 +4,7 @@ const usePoll = () => {
   const initialstate = {
     question: "",
     options: {},
-    totalVotes : 0
+    totalVotes: 0
   }
   const [state, setState] = useState(initialstate);
   const onQuestionChange = (e) => {
@@ -48,7 +48,7 @@ const usePoll = () => {
   const onResetData = () => {
     setState(initialstate)
   }
-  const onVote =(id) =>{
+  const onVote = (id) => {
     setState({
       ...state,
       totalVotes: state.totalVotes + 1,

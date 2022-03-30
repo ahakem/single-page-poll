@@ -7,6 +7,7 @@ export default function CreatePoll(props) {
     onAddOption,
     onDeleteOption,
     state,
+    onResetData
   } = props
 
   const OptionRef = useRef(null)
@@ -40,8 +41,9 @@ export default function CreatePoll(props) {
         <button onClick={passOption}>Add</button>
       </div>
       }
+      <p>{Object.keys(state.options).length}/10 possible Answers</p>
     </div>
-
+      <button onClick={onResetData}>Reset</button>
     </>
   )
 }

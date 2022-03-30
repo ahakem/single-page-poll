@@ -43,12 +43,19 @@ const usePoll = () => {
       options: cloneOptions
     })
   }
+  const onResetData = () => {
+    setState({
+      question: "something",
+      options: {}
+    })
+  }
   return {
     onQuestionChange,
     onOptionChange,
     onAddOption,
     onDeleteOption,
     state,
+    onResetData
   }
 }
 export default usePoll;

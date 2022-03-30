@@ -1,10 +1,12 @@
 import { useState } from "react";
 
 const usePoll = () => {
-  const [state, setState] = useState({
-    question: "something",
-    options: {}
-  });
+  const initialstate = {
+    question: "",
+    options: {},
+    totalVotes : 0
+  }
+  const [state, setState] = useState(initialstate);
   const onQuestionChange = (e) => {
     setState({
       ...state,
@@ -44,9 +46,19 @@ const usePoll = () => {
     })
   }
   const onResetData = () => {
+    setState(initialstate)
+  }
+  const onVote =(id) =>{
     setState({
-      question: "something",
-      options: {}
+      ...state,
+      totalVotes: state.totalVotes + 1,
+      options: {
+        ...state.options,
+        [id]: {
+          ...state.options[id],
+          votes: state.options[id].votes + 1
+        }
+      }
     })
   }
   return {
@@ -55,7 +67,8 @@ const usePoll = () => {
     onAddOption,
     onDeleteOption,
     state,
-    onResetData
+    onResetData,
+    onVote
   }
 }
 export default usePoll;

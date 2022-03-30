@@ -9,7 +9,8 @@ export default function Poll() {
     onAddOption,
     onDeleteOption,
     state,
-    onResetData
+    onResetData,
+    onVote
   } = usePoll()
   return (
     <div>
@@ -22,7 +23,9 @@ export default function Poll() {
         onResetData={onResetData}
       />
       <hr />
-      <Vote state={state} />
+      <Vote
+        onVote={onVote}
+        state={state} />
     </div>
   )
 }

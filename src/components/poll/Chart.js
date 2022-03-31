@@ -5,6 +5,7 @@ import {
   Typography
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import NoVote from './NoVote';
 
 const Item = styled(Box)(() => ({
   height: 350,
@@ -43,6 +44,9 @@ const OptionText = styled(Box)(() => ({
 export default function Vote(props) {
   const { state } = props
   const percentage = (partialValue) => (100 * partialValue) / state.totalVotes
+  if (Object.keys(state.options).length < 2 || state.question === "") {
+    return <NoVote/>
+  }
   return (
     <Box >
       <Typography sx={{ marginBottom: '10px' }} variant='h4'>{state.question}</Typography>

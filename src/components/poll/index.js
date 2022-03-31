@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import CreatePoll from './CreatePoll'
 import usePoll from '../../hooks/usePoll'
 import Vote from './Vote'
@@ -26,7 +26,7 @@ export default function Poll() {
   return (
     <Box mt={4} sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={12} md={4}>
+        <Grid item xs={12} sm={12} md={6} lg={3}>
           <Item>
             <CreatePoll
               onQuestionChange={onQuestionChange}
@@ -38,14 +38,14 @@ export default function Poll() {
             />
           </Item>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={12} md={6} lg={3}>
           <Item>
             <Vote
             onVote={onVote}
             state={state} />
           </Item>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={12} md={12} lg={6}>
           <Item>
           <Chart state={state} />
           </Item>

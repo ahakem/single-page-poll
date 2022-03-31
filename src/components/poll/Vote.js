@@ -7,7 +7,9 @@ import {
   FormControlLabel,
   FormControl,
   Button,
+  Alert
 } from '@mui/material';
+import NoVote from './NoVote';
 export default function Vote(props) {
   const { state, onVote } = props
   const [answer, setAnswer] = useState(null)
@@ -18,6 +20,9 @@ export default function Vote(props) {
   const handleChange = (event) => {
     setAnswer(event.target.value);
   };
+  if (Object.keys(state.options).length < 2 || state.question === "") {
+    return <NoVote/>
+  }
   return (
     <Box>
       <Typography variant='h4'>{state.question}</Typography>

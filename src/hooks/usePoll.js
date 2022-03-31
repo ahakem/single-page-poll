@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import getRandomColor from '../utils/getRandomColor'
 const usePoll = () => {
   const initialstate = {
     question: "",
@@ -32,7 +32,8 @@ const usePoll = () => {
         ...state.options,
         [Date.now()]: {
           text: value,
-          votes: 0
+          votes: 0,
+          color:getRandomColor()
         }
       }
     })
@@ -57,6 +58,7 @@ const usePoll = () => {
         [id]: {
           ...state.options[id],
           votes: state.options[id].votes + 1
+          
         }
       }
     })

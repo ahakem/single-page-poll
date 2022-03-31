@@ -26,6 +26,7 @@ const usePoll = () => {
     })
   }
   const onAddOption = (value) => {
+
     setState({
       ...state,
       options: {
@@ -33,10 +34,11 @@ const usePoll = () => {
         [Date.now()]: {
           text: value,
           votes: 0,
-          color:getRandomColor()
+          color: getRandomColor()
         }
       }
     })
+
   }
   const onDeleteOption = (id) => {
     const cloneOptions = { ...state.options }
@@ -58,7 +60,7 @@ const usePoll = () => {
         [id]: {
           ...state.options[id],
           votes: state.options[id].votes + 1
-          
+
         }
       }
     })

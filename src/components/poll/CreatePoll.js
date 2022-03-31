@@ -5,14 +5,12 @@ import {
   Box,
   TextField,
   Typography,
-  Paper,
   Chip,
   Button
 } from '@mui/material';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-
+import AddOption from './AddOption';
 export default function CreatePoll(props) {
   const {
     onQuestionChange,
@@ -23,11 +21,6 @@ export default function CreatePoll(props) {
     onResetData
   } = props
 
-  const OptionRef = useRef(null)
-  const passOption = () => {
-    onAddOption(OptionRef.current.value)
-    OptionRef.current.value = null
-  }
 
   return (
     <>
@@ -35,6 +28,8 @@ export default function CreatePoll(props) {
         label="Question"
         value={state.question}
         onChange={onQuestionChange}
+        helperText={`${state.question.length}/80`}
+        disabled={state.question.length === 80}
         fullWidth
         InputProps={{
           endAdornment: (
@@ -52,6 +47,8 @@ export default function CreatePoll(props) {
               value={state.options[id].text}
               onChange={(e) => onOptionChange(e, id)}
               fullWidth
+              helperText={`${state.options[id].text.length}/80`}
+              disabled={state.options[id].text.length === 80}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -72,29 +69,7 @@ export default function CreatePoll(props) {
         }
       </Box>
       {Object.keys(state.options).length < 10 &&
-        <Paper elevation={8}>
-          <Box p={2} mt={2}>
-            <TextField
-              fullWidth
-              label="Add Option"
-              inputRef={OptionRef}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      onClick={passOption}
-                      onMouseDown={passOption}
-                      edge="end"
-                    >
-                      <AddCircleOutlineIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-
-          </Box>
-        </Paper>
+        <AddOption onAddOption={onAddOption} />
       }
       <Box mt={3} sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Chip label={`${Object.keys(state.options).length}/10 possible Answers`} />

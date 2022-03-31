@@ -2,7 +2,7 @@ import Poll from './components/poll'
 import Container from '@mui/material/Container';
 function App() {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Poll />
     </Container>
   );

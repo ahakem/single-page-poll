@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/single-page-poll/static/js/main.fbef9bf8.js",
+    "static/js/787.a3612f9f.chunk.js": "/single-page-poll/static/js/787.a3612f9f.chunk.js",
+    "index.html": "/single-page-poll/index.html",
+    "main.fbef9bf8.js.map": "/single-page-poll/static/js/main.fbef9bf8.js.map",
+    "787.a3612f9f.chunk.js.map": "/single-page-poll/static/js/787.a3612f9f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fbef9bf8.js"
+  ]
+}

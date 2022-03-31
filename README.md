@@ -10,7 +10,12 @@ $ npm install
 $ npm start
 ```
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view 
+it in your browser.
+
+## Demo
+[Demo Link](https://ahakem.github.io/single-page-poll/)
+
 ## How To use the app
 - write a poll Question.
 - write 2 options answers or more (click on the plus icon to add).

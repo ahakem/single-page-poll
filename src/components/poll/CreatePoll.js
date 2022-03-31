@@ -82,7 +82,6 @@ export default function CreatePoll(props) {
                 endAdornment: (
                   <InputAdornment position="end">
                     <IconButton
-                      aria-label="toggle password visibility"
                       onClick={passOption}
                       onMouseDown={passOption}
                       edge="end"

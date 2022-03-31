@@ -7,7 +7,6 @@ import {
   FormControlLabel,
   FormControl,
   Button,
-  Alert
 } from '@mui/material';
 import NoVote from './NoVote';
 export default function Vote(props) {

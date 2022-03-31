@@ -13,7 +13,7 @@ export default function AddOption(props) {
     onAddOption,
   } = props
   const [value, setValue] = useState("")
-  const onHandleChange = (e) =>{
+  const onHandleChange = (e) => {
     setValue(e.target.value)
   }
   const passOption = () => {
@@ -22,32 +22,32 @@ export default function AddOption(props) {
   }
 
   return (
-        <Paper elevation={8}>
-          <Box p={2} mt={2}>
-            <TextField
-              fullWidth
-              value={value}
-              onChange={onHandleChange}
-              label="Add Option"
-              helperText={`${value.length}/80`}
-              disabled={value.length === 80}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      onClick={passOption}
-                      onMouseDown={passOption}
-                      edge="end"
-                    >
-                      <AddCircleOutlineIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
+    <Paper elevation={8}>
+      <Box p={2} mt={2}>
+        <TextField
+          fullWidth
+          value={value}
+          onChange={onHandleChange}
+          label="Add Option"
+          helperText={`${value.length}/80`}
+          disabled={value.length === 80}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={passOption}
+                  onMouseDown={passOption}
+                  edge="end"
+                >
+                  <AddCircleOutlineIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
 
-          </Box>
-        </Paper>
+      </Box>
+    </Paper>
 
   )
 }

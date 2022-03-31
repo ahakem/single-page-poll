@@ -5,13 +5,13 @@ import Vote from './Vote'
 import Chart from './Chart'
 
 import { styled } from '@mui/material/styles';
-import {Box, Paper, Grid} from '@mui/material';
+import { Box, Paper, Grid } from '@mui/material';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   padding: theme.spacing(2),
   color: theme.palette.text.secondary,
-  height:'100%',
-  width:'100%'
+  height: '100%',
+  width: '100%'
 }));
 export default function Poll() {
   const {
@@ -41,13 +41,13 @@ export default function Poll() {
         <Grid item xs={12} sm={12} md={6} lg={3}>
           <Item>
             <Vote
-            onVote={onVote}
-            state={state} />
+              onVote={onVote}
+              state={state} />
           </Item>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={6}>
           <Item>
-          <Chart state={state} />
+            <Chart state={state} />
           </Item>
         </Grid>
       </Grid>

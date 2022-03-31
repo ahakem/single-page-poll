@@ -20,7 +20,7 @@ export default function Vote(props) {
     setAnswer(event.target.value);
   };
   if (Object.keys(state.options).length < 2 || state.question === "") {
-    return <NoVote/>
+    return <NoVote />
   }
   return (
     <Box>
@@ -33,16 +33,16 @@ export default function Vote(props) {
           onChange={handleChange}
         >
           {Object.keys(state.options).map((id) => (
-            <FormControlLabel 
-              key={id} 
-              value={id} 
-              control={<Radio />} 
+            <FormControlLabel
+              key={id}
+              value={id}
+              control={<Radio />}
               label={state.options[id].text} />
           ))}
 
         </RadioGroup>
       </FormControl>
-      <Box mt={2} sx={{textAlign:"right"}}>
+      <Box mt={2} sx={{ textAlign: "right" }}>
         <Button variant='contained' onClick={() => sendVote(answer)} disabled={!answer}>Vote</Button>
       </Box>
 

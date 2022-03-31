@@ -21,7 +21,6 @@ const BarWraper = styled(Box)(() => ({
   display: 'flex'
 }));
 const Bar = styled(Box)(() => ({
-  height: '50%',
   width: 30,
   bottom: 0,
   left: 25,
@@ -45,7 +44,7 @@ export default function Vote(props) {
   const { state } = props
   const percentage = (partialValue) => (100 * partialValue) / state.totalVotes
   if (Object.keys(state.options).length < 2 || state.question === "") {
-    return <NoVote/>
+    return <NoVote />
   }
   return (
     <Box >

@@ -12,7 +12,7 @@ import {
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { display } from '@mui/system';
+
 export default function CreatePoll(props) {
   const {
     onQuestionChange,
@@ -93,8 +93,7 @@ export default function CreatePoll(props) {
                 ),
               }}
             />
-            {/* <input ref={OptionRef} type="text" />
-            <button onClick={passOption}>Add</button> */}
+
           </Box>
         </Paper>
       }
